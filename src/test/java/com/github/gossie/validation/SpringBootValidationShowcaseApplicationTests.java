@@ -19,7 +19,7 @@ class SpringBootValidationShowcaseApplicationTests {
 	private TestRestTemplate restTemplate;
 
 	@Test
-	void contextLoads() {
+	void createBooks() {
 		var createResponse1 = restTemplate.postForEntity("/api/books", new CreateBookDTO("The Catcher in the Rye"), TestBookDTO.class);
 		assertThat(createResponse1.getStatusCode()).isEqualTo(HttpStatus.CREATED);
 		assertThat(createResponse1.getBody().getLinks())
